@@ -3,7 +3,7 @@ name: Daily Weather Check
 on:
   schedule:
     # Runs at 6:00 AM UTC every day; adjust the cron expression if needed.
-    - cron: '30 9 * * *''
+    - cron: '31 9 * * *''
 
 jobs:
   run-weather-script:
