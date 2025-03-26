@@ -1,0 +1,26 @@
+name: Daily Weather Check
+
+on:
+  schedule:
+    # Runs at 6:00 AM UTC every day; adjust the cron expression if needed.
+    - cron: '0 22 * * *'
+
+jobs:
+  run-weather-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests twilio
+
+      - name: Run the script
+        run: |
+          python main.py
