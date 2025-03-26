@@ -30,8 +30,8 @@ need_umbrella = any(int(code) < 700 for code in weather_codes)
 if need_umbrella:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        from_='whatsapp:+14155238886',
+        from_='whatsapp:+{your twilio number}',
         body='It is going to rain today! Prepare an umbrella if you are going out ☂️',
-        to='whatsapp:+6590149200'
+        to='whatsapp:+{your own number}'
     )
     print(message.status)
